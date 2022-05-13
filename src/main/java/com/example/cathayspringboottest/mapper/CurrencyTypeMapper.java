@@ -27,8 +27,18 @@ public interface CurrencyTypeMapper {
             @Mapping(source = "code",target = "code"),
             @Mapping(source = "name",target = "name"),
             @Mapping(source = "status",target = "status"),
-            @Mapping(source = "currencyType.createTime",target = "createTime", dateFormat = "yyyy/MM/dd"),
-            @Mapping(source = "currencyType.updateTime",target = "updateTime", dateFormat = "yyyy/MM/dd")
+            @Mapping(source = "currencyType.createTime",target = "createTime"),
+            @Mapping(source = "currencyType.updateTime",target = "updateTime")
     })
     CurrencyTypeDto toDto(CurrencyType currencyType);
+
+    @Mappings({
+            @Mapping(source = "id",target = "id"),
+            @Mapping(source = "code",target = "code"),
+            @Mapping(source = "name",target = "name"),
+            @Mapping(source = "status",target = "status"),
+            @Mapping(source = "currencyTypeDto.createTime",target = "createTime", ignore = true),
+            @Mapping(source = "currencyTypeDto.updateTime",target = "updateTime", ignore = true)
+    })
+    CurrencyType toEntity(CurrencyTypeDto currencyTypeDto);
 }

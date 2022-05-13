@@ -14,7 +14,7 @@ import java.util.Map;
 @RequestMapping("/api")
 public class CoinDeskController {
 
-    private Logger logger = LogManager.getLogger(CurrencyTypeController.class);
+    private Logger logger = LogManager.getLogger(CoinDeskController.class);
 
     //注入CoinDeskService
     @Autowired

@@ -58,16 +58,16 @@ public class CurrencyTypeServiceImpl implements CurrencyTypeService {
         return true;
     }
 
-    public Boolean updateCurrencyType(Integer id,CurrencyType currencyType) {
+    public Boolean updateCurrencyType(Integer id, CurrencyType currencyType) {
         Optional<CurrencyType> isExistCurrencyType = findById(id);
         if (! isExistCurrencyType.isPresent()) {
             return false;
         }
-        CurrencyType oldTodo = isExistCurrencyType.get();
-        if (oldTodo.getName().equals(currencyType.getName()) && oldTodo.getCode().equals(currencyType.getCode())) {
+        CurrencyType oldCurrencyType = isExistCurrencyType.get();
+        if (oldCurrencyType.getName().equals(currencyType.getName()) && oldCurrencyType.getCode().equals(currencyType.getCode())) {
             return true;
         }
-        CurrencyType newCurrencyType = oldTodo;
+        CurrencyType newCurrencyType = oldCurrencyType;
         newCurrencyType.setCode(currencyType.getCode());
         newCurrencyType.setName(currencyType.getName());
         currencyTypeDao.save(newCurrencyType);

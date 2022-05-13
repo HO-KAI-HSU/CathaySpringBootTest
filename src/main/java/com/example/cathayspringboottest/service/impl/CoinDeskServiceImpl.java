@@ -52,7 +52,7 @@ public class CoinDeskServiceImpl implements CoinDeskService {
         return coindeskInfo;
     }
 
-    private String getCurrentTimeStamp() {
+    public String getCurrentTimeStamp() {
         SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//dd/MM/yyyy
         Date now = new Date();
         String strDate = sdfDate.format(now);

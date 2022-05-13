@@ -7,4 +7,6 @@ public interface CoinDeskService {
     Map getCoindeskCurrencyTypeMatchList();
 
     Map getCoindeskList();
+
+    String getCurrentTimeStamp();
 }

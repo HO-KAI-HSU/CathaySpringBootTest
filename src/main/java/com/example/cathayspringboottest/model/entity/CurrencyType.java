@@ -9,28 +9,29 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table
+@Table(name="CURRENCY_TYPE")
 @Getter @Setter
 public class CurrencyType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ID")
     Integer id;
 
-    @Column
+    @Column(name="CODE")
     String code;
 
-    @Column
+    @Column(name="NAME")
     String name;
 
-    @Column(insertable = false, columnDefinition = "int default 1")
+    @Column(name="STATUS", insertable = false, columnDefinition = "int default 1")
     Integer status = 1;
 
     @CreatedDate
-    @Column(updatable = true, nullable = false)
+    @Column(name="CREATE_TIME", updatable = true, nullable = false)
     Date createTime = new Date();
 
     @LastModifiedDate
-    @Column(nullable = true)
+    @Column(name="UPDATE_TIME", nullable = true)
     Date updateTime = new Date();
 }
